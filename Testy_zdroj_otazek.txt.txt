@@ -104,4 +104,3 @@ Otázka: Které algoritmy jsou vhodné speciálně pro ukládání hesel?
 0; SHA-1 a MD5
 0; CRC32 a Adler32
 0; AES a RSA
- 
