@@ -1,0 +1,10 @@
+Vypracoval/a: ondre grrds
+Otázek v testu: 8
+Výsledná známka: 5
+Procentní úspěšnost: 0.0 %
+Stupnice: <100-90>,(90-75>,(75-60>,(60-45>,(45-0>
+Datum a čas vyhodnocení: 12.2.2026, 14:56:22
+
+----------------------
+Chybně zodpovězeno:
+
