@@ -5,6 +5,7 @@ from datetime import datetime
 spravne_odpovedi = 0
 spatne_odpovedi = 0
 spatne_otazky = []
+uzivatel=None
 
 
 def validace_souboru(cesta_souboru):
@@ -210,6 +211,7 @@ def uspesnost(pocet_otazek):
     return uspech
 
 def zisk_jmena():
+    global uzivatel
     """
     Zeptá se uživatele na jméno a příjmení.
 
@@ -218,6 +220,7 @@ def zisk_jmena():
     """
     jmeno = input("Zadej jméno: ").strip()
     prijmeni = input("Zadej příjmení: ").strip()
+    uzivatel=jmeno, prijmeni
     return jmeno, prijmeni
 
 
@@ -283,21 +286,31 @@ def menu():
     Hlavní menu testu: načtení jména, počtu otázek, zobrazení otázek,
     vyhodnocení výsledků a uložení do souboru.
     """
-    global spravne_odpovedi, spatne_odpovedi, spatne_otazky
+    global spravne_odpovedi, spatne_odpovedi, spatne_otazky,uzivatel
     spravne_odpovedi = 0
     spatne_odpovedi = 0
     spatne_otazky = []
+    if uzivatel==None:
+        jmeno, prijmeni = zisk_jmena()
+        pocet_otazek = int(input("Kolik otázek (5-15)? "))
+        vysledky = nacteni_otazek(pocet_otazek)
+        for vstup, odpovedi, blok in vysledky:
+            spravna = overeni_odpovedi_spravne(odpovedi)
+            shoda_odpovedi(vstup, spravna, blok)
+        uspesnost(pocet_otazek)
+        uloz_vysledek(jmeno, prijmeni, pocet_otazek)
 
-    jmeno, prijmeni = zisk_jmena()
-    pocet_otazek = int(input("Kolik otázek (5-15)? "))
+    else:
+        
+        pocet_otazek = int(input("Kolik otázek (5-15)? "))
+        vysledky = nacteni_otazek(pocet_otazek)
+        for vstup, odpovedi, blok in vysledky:
+            spravna = overeni_odpovedi_spravne(odpovedi)
+            shoda_odpovedi(vstup, spravna, blok)
+        uspesnost(pocet_otazek)
+        uloz_vysledek(jmeno, prijmeni, pocet_otazek)
 
-    vysledky = nacteni_otazek(pocet_otazek)
-    for vstup, odpovedi, blok in vysledky:
-        spravna = overeni_odpovedi_spravne(odpovedi)
-        shoda_odpovedi(vstup, spravna, blok)
 
-    uspesnost(pocet_otazek)
-    uloz_vysledek(jmeno, prijmeni, pocet_otazek)
 
 def volba():
     """
@@ -308,8 +321,8 @@ def volba():
     """
     while True:
         try:
-            vol = int(input("1 - nová hra\n2 - konec\nZadej volbu: "))
-            if vol in [1, 2]:
+            vol = int(input("1 - nová hra\n sztejny uzivatel\n 3 - konec\nZadej volbu: "))
+            if vol in [1, 2,3]:
                 return vol
         except ValueError:
             pass
@@ -319,9 +332,13 @@ def realne_menu():
     """
     Menu pro opakované spuštění testu nebo ukončení aplikace.
     """
+    global uzivatel
+
     while True:
         vol = volba()
         if vol == 1:
+            menu()
+        elif vol== 2:
             menu()
         else:
             print("Program ukončen")

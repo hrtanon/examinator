@@ -1,0 +1,106 @@
+Autor: Testovací autor
+
+
+Otázka: Co je hash funkce?
+1; Jednosměrný matematický algoritmus převádějící data libovolné délky na pevný výstup
+0; Algoritmus pro šifrování dat, který lze snadno dešifrovat
+0; Datová struktura pro ukládání seznamů
+0; Programovací jazyk používaný pro kryptografii
+
+
+Otázka: Jaká vlastnost hash funkce zaručuje, že stejný vstup dává stejný výstup?
+1; Determinističnost
+0; Jednosměrnost
+0; Kolizní odolnost
+0; Rozptyl
+
+
+Otázka: Co znamená jednosměrnost hash funkce?
+1; Z hashe nelze zpětně získat původní data
+0; Hash lze snadno převést zpět na vstup
+0; Hash je možné libovolně měnit
+0; Hash se vždy šifruje klíčem
+
+
+Otázka: K čemu se běžně používá hashování?
+1; Ukládání hesel a ověřování uživatelů
+0; Přímé ukládání citlivých dat v čitelné podobě
+0; Komprimace obrázků
+0; Spouštění programů
+
+
+Otázka: Co znamená kolizní odolnost hash funkce?
+1; Je těžké najít dva různé vstupy se stejným hashem
+0; Hash se nikdy nemění
+0; Hash lze vždy převést zpět
+0; Hash je vždy kratší než vstup
+
+
+Otázka: Co je hash tabulka?
+1; Datová struktura pro ukládání dvojic klíč–hodnota
+0; Typ proměnné v Pythonu
+0; Kryptografický algoritmus
+0; Databázový server
+
+
+Otázka: Jaká datová struktura v Pythonu využívá hash tabulku?
+1; dictionary
+0; list
+0; tuple
+0; set pouze bez hashe
+
+
+Otázka: Který modul v Pythonu se používá pro hashování hesel?
+1; hashlib
+0; math
+0; random
+0; os
+
+
+Otázka: Co dělá metoda encode() při práci s heslem?
+1; Převádí řetězec na bajty
+0; Šifruje heslo
+0; Ukládá heslo do souboru
+0; Vytváří hash
+
+
+Otázka: Jaký hash algoritmus se používá v ukázce kódu?
+1; SHA-256
+0; MD5
+0; SHA-1
+0; bcrypt
+
+
+Otázka: Co vrací metoda hexdigest()?
+1; Hexadecimální řetězec reprezentující hash
+0; Číslo v desítkové soustavě
+0; Původní heslo
+0; Binární soubor
+
+
+Otázka: Jak probíhá ověření hesla?
+1; Zadané heslo se znovu zahashuje a porovná s uloženým hashem
+0; Heslo se porovná přímo s uloženým textem
+0; Hash se dešifruje
+0; Heslo se odešle na server
+
+
+Otázka: Co je salt?
+1; Náhodný řetězec přidaný k heslu před hashováním
+0; Druh hash algoritmu
+0; Šifrovací klíč
+0; Typ databáze
+
+
+Otázka: Proč se používá salt?
+1; Aby stejná hesla neměla stejný hash
+0; Aby bylo možné hash dešifrovat
+0; Aby se hash zkrátil
+0; Aby byl výpočet rychlejší
+
+
+Otázka: Které algoritmy jsou vhodné speciálně pro ukládání hesel?
+1; bcrypt a scrypt
+0; SHA-1 a MD5
+0; CRC32 a Adler32
+0; AES a RSA
