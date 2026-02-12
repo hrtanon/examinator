@@ -301,7 +301,7 @@ def menu():
         uloz_vysledek(jmeno, prijmeni, pocet_otazek)
 
     else:
-        
+        jmeno,prijmeni=uzivatel
         pocet_otazek = int(input("Kolik otázek (5-15)? "))
         vysledky = nacteni_otazek(pocet_otazek)
         for vstup, odpovedi, blok in vysledky:
